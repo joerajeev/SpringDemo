@@ -1,0 +1,8 @@
+	<nav id="top_menu">
+		<ul>
+			<li><a href="${pageContext.request.contextPath}">Home</a>
+			<li><a href="${pageContext.request.contextPath}/buy">For sale</a></li>
+			<li><a href="${pageContext.request.contextPath}/sell">Create Ad</a></li>
+			<li>Login</li>
+		</ul>
+	</nav>

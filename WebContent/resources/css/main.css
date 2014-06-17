@@ -1,0 +1,88 @@
+@CHARSET "ISO-8859-1";
+*{
+	margin: 0px;
+	padding:0px;
+}
+header, nav, section, article, hgroup, aside, footer{
+	display: block;
+}
+body{
+	text-align: center;
+}
+#body_wrapper{
+	width: 1000px;
+	/* border: 1px solid black; */
+	margin: 20px auto;
+	text-align: left;	
+}
+h1{
+	font: bold 23px Tahoma;
+}
+h2{
+	font: bold 19px Tahoma;
+}
+h3{
+	font: bold 16px Tahoma;
+}
+h4{
+	font: bold 14px Tahoma;
+}
+#top_header{
+	text-align: center;
+	padding: 20px;
+	background: #BBBBEE;
+}
+#top_menu{
+	background: #666699;
+}
+#top_menu li{
+	display: inline-block;
+	font: bold 14px Tahoma;
+	color: white;
+	padding: 10px;
+	text-decoration: none;
+}
+#top_menu a{
+	color: white;
+	text-decoration: none;
+}
+header{
+	text-align: left;
+}
+section{
+	float: left;
+	width: 660px;
+	margin: 30px;	/* 720 px total*/
+}
+article{
+	margin: 10px;
+	padding: 10px;
+}
+article header{
+	margin-bottom: 10px;
+}
+aside{
+	float: left;
+	background: #3366FF;
+	color: white;
+	width: 220px;
+	margin: 20px 0px;
+	padding: 30px;
+}
+#footer{
+	clear: both;
+	font: normal 14px Tahoma;
+	padding: 10px;
+	margin: 10px;
+	border-top: 1px solid gray;
+	text-align: center;
+}
+.form{
+	text-align: left;
+	
+}
+.form-error{
+	color: red;
+	/* font: normal;
+	text-align: left; */
+}
