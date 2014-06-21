@@ -80,33 +80,6 @@ public class AdController {
 		
 	}
 	
-	/*@RequestMapping(value="/docreatead", method=RequestMethod.POST)
-	public String createSeller(HttpServletRequest request,@Valid Seller seller, BindingResult result, Model model) {
-		
-		if(!result.hasErrors()) {
-			logger.info("Seller: "+seller);
-		//	model.addAttribute("seller", seller); //used only for validation
-			Vehicle vehicle = (Vehicle) request.getSession().getAttribute("vehicle");
-			logger.info("Vehicle"+ vehicle);
-			try {
-				adService.createAd(vehicle, seller);
-				request.setAttribute("message","Car added sucessfully");
-				//TODO need to remove the object from teh session at this point
-				return "home";
-			} catch (ServiceException e) {
-				logger.warning(e.getMessage());
-				request.setAttribute("message", "Error adding car. Please try again.");
-				return "add-car";
-			}
-		}else {
-			for (ObjectError error : result.getAllErrors()) {
-				logger.warning(error.toString());
-			}
-			request.setAttribute("message", "Error adding seller");
-			return "add-seller";
-		}
-	}
-*/
 	/**
 	 * @return the userService
 	 */

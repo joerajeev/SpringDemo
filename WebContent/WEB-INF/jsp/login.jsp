@@ -13,27 +13,24 @@
 	<div id="body_wrapper">
 		<%@ include file="header.jspf" %>
 		<section id="main_section">
-			<header>
-				<h3>Login</h3>
-			</header>
 			<article>
 				<c:if test="${param.error != null}">
-					<div class="form-error">Invalid email or password</div>
+					<div class="alert alert-danger">Invalid email or password</div>
 				</c:if>
 			</article>
 			<article>
-				<form name='loginform' action='${pageContext.request.contextPath}/j_spring_security_check' method='POST'>
+				<form name='loginform' action='${pageContext.request.contextPath}/j_spring_security_check' method='POST' autocomplete='off'>
 					<div class="form-group">
 						<label for="username">Email</label>
-						<input id="username" class="form-control" type="text" name="j_username">
+						<input id="username" class="form-control" type="text" name="j_username" value="" autocomplete="off">
 					</div>
 					<div class="form-group">
 						<label for="password">Password</label>
-						<input id="password" class="form-control" type="password" name="j_password">
+						<input id="password" class="form-control" type="password" name="j_password" value="">
 					</div>
 					<div class="form-group">
-						<input class="btn" name="submit" type="submit" value="Login">
-						<a class="btn" href="${pageContext.request.contextPath}/sign-up">Sign Up</a>
+						<input class="btn" name="submit" type="submit" value="Sign in">
+						<a class="btn" href="${pageContext.request.contextPath}/sign-up">Create New Account</a>
 					</div>
 				</form>
 			</article>

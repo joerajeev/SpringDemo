@@ -17,7 +17,7 @@
 		<section>
 			<article>
 				<header>
-						<h2>Available cars</h2>
+						<h3>Available cars</h3>
 				</header>
 				<div class="jumbotron">
 					<ul>
@@ -31,8 +31,12 @@
 			</article>
 		</section>
 		
-
 		<%@ include file="footer.jspf" %>
 	</div>
+	
+	 <!-- Placed at the end of the document so the pages load faster -->
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/common.js"></script>
+	
 </body>
 </html>

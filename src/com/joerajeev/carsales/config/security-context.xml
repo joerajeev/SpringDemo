@@ -24,6 +24,7 @@
 		<security:intercept-url pattern="/static/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<security:intercept-url pattern="/buy" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<security:intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		<security:intercept-url pattern="/logged-out" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<security:intercept-url pattern="/sign-up" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<security:intercept-url pattern="/docreateuser" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<security:intercept-url pattern="/sell" access="ROLE_USER" />
@@ -31,6 +32,10 @@
 		<security:intercept-url pattern="/docreatead" access="ROLE_USER" />
 		<security:intercept-url pattern="/**" access="ROLE_ADMIN" />
 		<security:form-login login-page="/login"
-			authentication-failure-url="/login?error=true" />
+			authentication-failure-url="/login?error" />
+		<security:logout logout-success-url="/?msg=logged-out" />
 	</security:http>
+	<bean id="webexpressionHandler"
+		class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler">
+	</bean>
 </beans>

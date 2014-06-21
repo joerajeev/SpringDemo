@@ -1,27 +1,21 @@
-
-<%-- <nav id="top_menu">
-		<ul>
-			<li><a href="${pageContext.request.contextPath}">Home</a>
-			<li><a href="${pageContext.request.contextPath}/buy">For sale</a></li>
-			<li><a href="${pageContext.request.contextPath}/sell">Create Ad</a></li>
-			<li>Login</li>
-		</ul>
-	
-</nav> --%>
-
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <nav class="navbar navbar-default" role="navigation">
-   <div class="navbar-header">
-   </div>
    <div>
-      <ul class="nav navbar-nav">
-      	 <li><a href="${pageContext.request.contextPath}">Home</a></li>
-         <li class="active"><a href="${pageContext.request.contextPath}/buy">For Sale</a></li>
-         <li><a href="${pageContext.request.contextPath}/sell">Create Ad</a></li>
+      <ul id="main-nav-ul" class="nav navbar-nav">
+      	 <li id="home-li"><a href="${pageContext.request.contextPath}">Home</a></li>
+         <li id="buy-li"><a href="${pageContext.request.contextPath}/buy">For Sale</a></li>
+         <li id="sell-li"><a href="${pageContext.request.contextPath}/sell">Create Ad</a></li>
       </ul>
    </div>
     <div>
       <ul class="nav navbar-nav navbar-right right-nav">
-         <li><a href="${pageContext.request.contextPath}/login">Login</a></li>
+		<sec:authorize access="!isAuthenticated()">
+         	<li><a href="${pageContext.request.contextPath}/login">Login</a></li>
+      	</sec:authorize>
+      	<sec:authorize access="isAuthenticated()">
+	         <li><a href="${pageContext.request.contextPath}/j_spring_security_logout">Logout</a></li>
+      	</sec:authorize>		
+      	
       </ul>
    </div>
 </nav>
