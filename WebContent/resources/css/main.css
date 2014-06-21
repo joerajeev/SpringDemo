@@ -30,7 +30,7 @@ h4{
 #top_header{
 	text-align: center;
 	padding: 20px;
-	background: #BBBBEE;
+	background: #EEEEEE;
 }
 #top_menu{
 	background: #666699;
@@ -85,4 +85,7 @@ aside{
 	color: red;
 	/* font: normal;
 	text-align: left; */
+}
+.right-nav{
+	padding-right: 20px;
 }

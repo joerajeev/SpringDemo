@@ -1,8 +1,27 @@
-	<nav id="top_menu">
+
+<%-- <nav id="top_menu">
 		<ul>
 			<li><a href="${pageContext.request.contextPath}">Home</a>
 			<li><a href="${pageContext.request.contextPath}/buy">For sale</a></li>
 			<li><a href="${pageContext.request.contextPath}/sell">Create Ad</a></li>
 			<li>Login</li>
 		</ul>
-	</nav>
+	
+</nav> --%>
+
+<nav class="navbar navbar-default" role="navigation">
+   <div class="navbar-header">
+   </div>
+   <div>
+      <ul class="nav navbar-nav">
+      	 <li><a href="${pageContext.request.contextPath}">Home</a></li>
+         <li class="active"><a href="${pageContext.request.contextPath}/buy">For Sale</a></li>
+         <li><a href="${pageContext.request.contextPath}/sell">Create Ad</a></li>
+      </ul>
+   </div>
+    <div>
+      <ul class="nav navbar-nav navbar-right right-nav">
+         <li><a href="${pageContext.request.contextPath}/login">Login</a></li>
+      </ul>
+   </div>
+</nav>

@@ -12,7 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.joerajeev.carsales.service.AdService;
 import com.joerajeev.carsales.service.Seller;
@@ -44,7 +43,7 @@ public class AdController {
 	@RequestMapping("/buy")
 	public String showAvailableCars(Model model) {
 		model.addAttribute("vehicles", adService.getAllVehicles());
-		return "available-cars";
+		return "list-cars";
 	}
 	
 	@RequestMapping("/sell")
@@ -81,35 +80,14 @@ public class AdController {
 		
 	}
 	
-	/*@RequestMapping(value="/docreatecar", method=RequestMethod.POST)
-	public String createCar(HttpServletRequest request,@Valid Vehicle vehicle, BindingResult result, Model model) {
-		
-		if(!result.hasErrors()) {
-			logger.info("Vehicle: "+vehicle);
-			request.getSession().setAttribute("vehicle", vehicle);
-			//model.addAttribute("vehicle" ,vehicle);	//used only for validation
-			model.addAttribute("seller", new Seller());
-			return "add-seller";
-		}else {
-			for (ObjectError error : result.getAllErrors()) {
-				logger.warning(error.toString());
-			}
-			request.setAttribute("message", "Error adding car");
-			return "add-car";
-		}
-		
-	}*/
-	
-	@RequestMapping(value="/docreatead", method=RequestMethod.POST)
+	/*@RequestMapping(value="/docreatead", method=RequestMethod.POST)
 	public String createSeller(HttpServletRequest request,@Valid Seller seller, BindingResult result, Model model) {
 		
 		if(!result.hasErrors()) {
 			logger.info("Seller: "+seller);
 		//	model.addAttribute("seller", seller); //used only for validation
 			Vehicle vehicle = (Vehicle) request.getSession().getAttribute("vehicle");
-	
 			logger.info("Vehicle"+ vehicle);
-					
 			try {
 				adService.createAd(vehicle, seller);
 				request.setAttribute("message","Car added sucessfully");
@@ -128,7 +106,7 @@ public class AdController {
 			return "add-seller";
 		}
 	}
-
+*/
 	/**
 	 * @return the userService
 	 */

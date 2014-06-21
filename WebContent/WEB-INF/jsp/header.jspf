@@ -1,4 +1,4 @@
-	<header id="top_header">
+	<header id="top_header" class="page-header">
 		<h2>Spring Car Sales</h2>
 	</header>
 

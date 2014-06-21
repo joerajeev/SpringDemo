@@ -9,6 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/static/css/main.css"></link>
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
 <title>Create an Ad</title>
 </head>
 <body>
@@ -20,7 +21,6 @@
 			<header>
 				<hgroup>
 					<h2>Create an ad</h2>
-					<h3>Car Details</h3>
 				</hgroup>
 			</header>
 			
@@ -63,40 +63,7 @@
 				<div>
 					<input class="btn" name="Create" type="submit" value="Save"></input>
 				</div>
-			<%-- 	<table>
-					<tr>
-						<td>Registration: </td><td><form:input name="reg" type="text" path="reg"/><br>
-						<form:errors path="reg"></form:errors></td>
-					</tr>
-					<tr>
-						<td>Year :</td><td><form:input name="year" type="text" path="year"/><br>
-						<form:errors path="year"></form:errors>
-						</td>
-					</tr>
-					<tr>
-						<td>Milage:</td><td><form:input name="milage" type="text" path="milage"/><br>
-						<form:errors path="milage"></form:errors>
-						</td>
-					</tr>
-					<tr>
-						<td>Colour:</td><td><form:input name="colour" type="text" path="colour"/><br>
-						<form:errors path="colour"></form:errors>
-						</td>
-					</tr>
-					<tr>
-						<td>Make:</td><td><form:input name="make" type="text" path="make"/><br>
-						<form:errors path="make"></form:errors>
-						</td>
-					</tr>
-					<tr>
-						<td>Model:</td><td><form:input name="model" type="text" path="model"/><br>
-						<form:errors path="model"></form:errors>
-						</td>
-					</tr>
-					<tr>
-						<td></td><td><input name="Create" type="submit" value="continue"></input></td>
-					</tr>
-				</table> --%>
+		
 			</form:form>
 			</article>
 		</section>

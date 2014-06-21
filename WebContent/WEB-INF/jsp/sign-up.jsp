@@ -8,6 +8,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/main.css">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+<script type="text/javascript">
+	function validateForm(){
+		return ($('#password').val() == $('#confirm-password').val());
+	}
+</script>
 <title>Spring Car Sales</title>
 </head>
 <body>	
@@ -15,7 +21,7 @@
 		<%@ include file="header.jspf" %>
 		<%@ include file="main-nav.jspf" %>
 		<section>
- 			<form:form method="POST" action="${pageContext.request.contextPath}/docreateuser" commandName="seller">
+ 			<form:form method="POST" action="${pageContext.request.contextPath}/docreateuser" commandName="seller" onsubmit="return validateForm()">
  				<div class="form-group">
  					<label for="name">Name</label>
  					<form:input class="form-control" id="name" name="name" type="text" path="name" />
@@ -52,5 +58,8 @@
  		</section> 
 		<%@ include file="footer.jspf" %>
 	</div>
+	
+	 <!-- Placed at the end of the document so the pages load faster -->
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 </body>
 </html>

@@ -8,8 +8,6 @@
 	<security:authentication-manager>
 		<security:authentication-provider>
 			<security:user-service>
-				<security:user name="rajeev" authorities="admin"
-					password="1qaz2wsx@" />
 				<security:user name="admin" authorities="admin"
 					password="admin" />
 			</security:user-service>

@@ -18,7 +18,7 @@
 			</header>
 			<article>
 				<c:if test="${param.error != null}">
-					<div class="error">Invalid email or password</div>
+					<div class="form-error">Invalid email or password</div>
 				</c:if>
 			</article>
 			<article>
