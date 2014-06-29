@@ -13,14 +13,14 @@
 <title>Create an Ad</title>
 </head>
 <body>
-	<div id="body_wrapper">
+	<div id="body_wrapper" class="container">
 		<%@ include file="header.jspf" %>
 		<%@ include file="main-nav.jspf" %>
 		
 		<section>
 			<header>
 				<hgroup>
-					<h2>Create an ad</h2>
+					<h3>Create an ad</h3>
 				</hgroup>
 			</header>
 			
@@ -28,43 +28,51 @@
 			<c:catch var="message">${message}</c:catch>
 			<c:if test="">${message}</c:if>
 			 -->
-			<article>
-			<form:form method="POST" action="${pageContext.request.contextPath}/docreatecar" commandName="vehicle">
-				<div class="form-group">
-					<label for="reg" >Registration</label>
-					<form:input class="form-control" id="reg" name="reg" type="text" path="reg"></form:input>
-					<form:errors path="reg"></form:errors>
-				</div>
-				<div class="form-group">
-					<label for="year" >Year</label>
-					<form:input class="form-control" id="year" name="year" type="text" path="year"></form:input>
-					<form:errors path="year"></form:errors>
-				</div>
-				<div class="form-group">
-					<label for="milage" >Milage</label>
-					<form:input class="form-control" id="milage" name="milage" type="text" path="milage"></form:input>
-					<form:errors path="milage"></form:errors>
-				</div>
-				<div class="form-group">
-					<label for="colour" >Colour</label>
-					<form:input class="form-control" id="colour" name="colour" type="text" path="colour"></form:input>
-					<form:errors path="colour"></form:errors>
-				</div>
-				<div class="form-group">
-					<label for="make" >Make</label>
-					<form:input class="form-control" id="make" name="make" type="text" path="make"></form:input>
-					<form:errors path="make"></form:errors>
-				</div>
-				<div class="form-group">
-					<label for="model" >Model</label>
-					<form:input class="form-control" id="model" name="model" type="text" path="model"></form:input>
-					<form:errors path="model"></form:errors>
-				</div>
-				<div>
-					<input class="btn" name="Create" type="submit" value="Save"></input>
-				</div>
-		
-			</form:form>
+			 <article>
+			 	<c:catch var="err">${error}</c:catch>
+				<c:if test="not empty err">
+					<article class="alert alert-danger">
+						<p>${err}</p>
+					</article>
+				</c:if>
+			 </article>
+			<article class="jumbotron">
+				<form:form method="POST" action="${pageContext.request.contextPath}/docreatecar" commandName="vehicle">
+					<div class="form-group">
+						<label for="reg" >Registration</label>
+						<form:input class="form-control" id="reg" name="reg" type="text" path="reg"></form:input>
+						<form:errors path="reg"></form:errors>
+					</div>
+					<div class="form-group">
+						<label for="year" >Year</label>
+						<form:input class="form-control" id="year" name="year" type="text" path="year"></form:input>
+						<form:errors path="year"></form:errors>
+					</div>
+					<div class="form-group">
+						<label for="milage" >Milage</label>
+						<form:input class="form-control" id="milage" name="milage" type="text" path="milage"></form:input>
+						<form:errors path="milage"></form:errors>
+					</div>
+					<div class="form-group">
+						<label for="colour" >Colour</label>
+						<form:input class="form-control" id="colour" name="colour" type="text" path="colour"></form:input>
+						<form:errors path="colour"></form:errors>
+					</div>
+					<div class="form-group">
+						<label for="make" >Make</label>
+						<form:input class="form-control" id="make" name="make" type="text" path="make"></form:input>
+						<form:errors path="make"></form:errors>
+					</div>
+					<div class="form-group">
+						<label for="model" >Model</label>
+						<form:input class="form-control" id="model" name="model" type="text" path="model"></form:input>
+						<form:errors path="model"></form:errors>
+					</div>
+					<div>
+						<input class="btn" name="Create" type="submit" value="Save"></input>
+					</div>
+			
+				</form:form>
 			</article>
 		</section>
 		

@@ -47,7 +47,7 @@ public class AdService {
 		}
 	}
 	
-	public void createAd(Vehicle vehicle, Seller seller) throws ServiceException{
+	/*public void createAd(Vehicle vehicle, Seller seller) throws ServiceException{
 		//TODO: need to save both of these in a transaction
 		try {
 			//authorityDao.create(seller.getEmail(), "WEB_USER");
@@ -59,5 +59,5 @@ public class AdService {
 			logger.warning("Error creating ad :"+e.getMessage());
 			throw new ServiceException("Error creating ad", e);
 		}
-	}
+	}*/
 }

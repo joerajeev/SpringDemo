@@ -55,17 +55,21 @@ public class AdController {
 	
 	@RequestMapping("/docreatecar")
 	public String createCar(HttpServletRequest request,@Valid Vehicle vehicle, BindingResult result, Model model, Principal principal) {
-		
 		if(!result.hasErrors()) {
 			logger.info("Vehicle: "+vehicle);
 			try {
 				String username= principal.getName();
 				logger.info("user :"+username);
 				Seller user = userService.readByUsername(username);
-				vehicle.setOwner(user.getId());
-				adService.createVehicle(vehicle);
-				request.setAttribute("message", "Ad created successfully");
-				return "home";
+				if(user != null) {
+					vehicle.setOwner(user.getId());
+					adService.createVehicle(vehicle);
+					request.setAttribute("message", "Ad created successfully");
+					return "home";
+				}else {
+					request.setAttribute("error", "Not a valid user");
+					return "add-car";
+				}
 			} catch (ServiceException e) {
 				request.setAttribute("message", "Error adding car");
 				return "add-car";

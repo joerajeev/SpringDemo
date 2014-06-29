@@ -15,10 +15,9 @@
 		<%@ include file="header.jspf"%>
 		<%@ include file="main-nav.jspf"%>
 		<section id="main_section">
-			<c:catch var="message">${message}</c:catch>
-			<c:if test="not empty message">
-				<article class="alert alert-info">
-					<p>${message}</p>
+			<c:if test="${message != null}">
+				<article class="alert alert-success">
+					${message}
 				</article>
 			</c:if>
 			<c:if test="${param.msg != null}">
@@ -46,11 +45,6 @@
 				</div>
 			</article>
 		</section>
-<!-- 
-		<aside id="side_news" class="jumbotron">
-			<h3>News</h3>
-			<p> Need to either improve this or get rid of it</p>
-		</aside> -->
 		<aside id="side_news" class="panel panel-default">
 			<div class="panel-heading">
 				<h3 class="panel-title">News</h3>

@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 </head>
 <body>
-	<div id="body_wrapper">
+	<div id="body_wrapper" class="container">
 		<%@ include file="header.jspf" %>
 		<%@ include file="main-nav.jspf" %>
 
