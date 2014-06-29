@@ -14,7 +14,7 @@ The sql required to create the DB is in resources/create_db.sql. It was created 
 Also the datasource info will need to be created in your appication server with the name 'jdbc/carsalesdb'. 
 For example: 
 ```
-<Resource name="jdbc/carsalesdb" auth="Container" type="javax.sql.DataSource"
+       <Resource name="jdbc/carsalesdb" auth="Container" type="javax.sql.DataSource"
                maxActive="100" maxIdle="30" maxWait="10000"
                username="javauser" password="javadude" driverClassName="com.mysql.jdbc.Driver"
                url="jdbc:mysql://localhost:3306/carsales"/>
