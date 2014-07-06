@@ -32,7 +32,7 @@
 		<section>
 			<article id="sign-up-messages"></article>
 			<article>
-	 			<form:form method="POST" action="${pageContext.request.contextPath}/docreateuser" commandName="seller" onsubmit="return validateForm()">
+	 			<form:form method="POST" action="${pageContext.request.contextPath}/docreateuser" commandName="user" onsubmit="return validateForm()">
 	 				<div class="form-group">
 	 					<label for="name">Name</label>
 	 					<form:input class="form-control" id="name" name="name" type="text" path="name" />

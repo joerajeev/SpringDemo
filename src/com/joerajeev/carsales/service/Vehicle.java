@@ -3,6 +3,12 @@ package com.joerajeev.carsales.service;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
 
+/**
+ * Domain class representing a Vehicle in the system
+ * 
+ * @author Rajeev
+ *
+ */
 public class Vehicle {
 
 	@NotEmpty(message="Cannot be empty")

@@ -7,15 +7,21 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
 import com.joerajeev.carsales.dao.AuthorityDao;
-import com.joerajeev.carsales.dao.SellerDao;
+import com.joerajeev.carsales.dao.UserDao;
 
+/**
+ * Service layer class providing User related services 
+ * 
+ * @author Rajeev
+ *
+ */
 @Service
 public class UserService {
 
 	Logger logger = Logger.getLogger(UserService.class.toString());
 	
 	@Autowired
-	private SellerDao sellerDao;
+	private UserDao userDao;
 
 	@Autowired
 	private AuthorityDao authorityDao;
@@ -25,34 +31,34 @@ public class UserService {
 	 * @param user
 	 * @return id of the user created
 	 */
-	public int createUser(Seller user) throws ServiceException{
+	public int createUser(User user) throws ServiceException{
 		//Need to do this in a transaction
 		try {
 			authorityDao.create(user.getEmail(), "ROLE_USER");
-			return sellerDao.create(user);
+			return userDao.create(user);
 		} catch (Exception e) {
 			logger.warning("Error creating user "+e);
 			throw new ServiceException("Error creating user", e);
 		}
 	}
 	
-	public Seller readByUsername(String username) {
+	public User readByUsername(String username) {
 		
-		return sellerDao.read(username);
+		return userDao.read(username);
 	}
 	
 	/**
-	 * @return the sellerDao
+	 * @return the userDao
 	 */
-	public SellerDao getSellerDao() {
-		return sellerDao;
+	public UserDao getUserDao() {
+		return userDao;
 	}
 
 	/**
-	 * @param sellerDao the sellerDao to set
+	 * @param userDao the userDao to set
 	 */
-	public void setSellerDao(SellerDao sellerDao) {
-		this.sellerDao = sellerDao;
+	public void setUserDao(UserDao userDao) {
+		this.userDao = userDao;
 	}
 
 	/**

@@ -2,7 +2,13 @@ package com.joerajeev.carsales.service;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-public class Seller {
+/**
+ * Domain class representing a user of the system
+ * 
+ * @author Rajeev
+ *
+ */
+public class User {
 	
 	private int id;
 
@@ -102,7 +108,7 @@ public class Seller {
 	 */
 	@Override
 	public String toString() {
-		return "Seller [name=" + name + ", phone=" + phone + ", address=" + address + ", email=" + email
+		return "User [name=" + name + ", phone=" + phone + ", address=" + address + ", email=" + email
 				+ ", password=" + password + "]";
 	}
 
@@ -132,7 +138,7 @@ public class Seller {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Seller other = (Seller) obj;
+		User other = (User) obj;
 		if (address == null) {
 			if (other.address != null)
 				return false;

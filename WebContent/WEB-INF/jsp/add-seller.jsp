@@ -15,7 +15,7 @@
 	<section>
 		<header>Sign up</header>
 		<article>
-			<form:form method="POST" action="${pageContext.request.contextPath}/docreatead" commandName="seller">
+			<form:form method="POST" action="${pageContext.request.contextPath}/docreatead" commandName="user">
 				<table>
 					<tr>
 						<td>Name: </td><td><form:input name="name" type="text" path="name" /><br><form:errors path="name"></form:errors></td>

@@ -14,10 +14,16 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.joerajeev.carsales.service.Seller;
+import com.joerajeev.carsales.service.User;
 import com.joerajeev.carsales.service.ServiceException;
 import com.joerajeev.carsales.service.UserService;
 
+/**
+ * Controller that would serve security related requests
+ * 
+ * @author Rajeev
+ *
+ */
 @Controller
 public class SecurityController {
 
@@ -33,7 +39,7 @@ public class SecurityController {
 	
 	@RequestMapping("/sign-up")
 	public String showSignUpPage(Model model) {
-		model.addAttribute(new Seller());
+		model.addAttribute(new User());
 		return "sign-up";
 	}
 
@@ -52,7 +58,7 @@ public class SecurityController {
 	}
 	
 	@RequestMapping(value="/docreateuser", method=RequestMethod.POST)
-	public String createUser(Model model, @Valid Seller user, BindingResult result) {
+	public String createUser(Model model, @Valid User user, BindingResult result) {
 		if(result.hasErrors()) {
 			List<ObjectError> errors = result.getAllErrors();
 			for (ObjectError objectError : errors) {

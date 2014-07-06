@@ -9,6 +9,10 @@
 
 
 	<context:annotation-config></context:annotation-config>
+	
+	<!-- Scans the given package for components and makes them available in the container for wireing etc -->
 	<context:component-scan base-package="com.joerajeev.carsales.dao"></context:component-scan>
+	
+	<!-- Looks up jndi resource by given name and creates a bean called dataSource -->
 	<jee:jndi-lookup jndi-name="jdbc/carsalesdb" id="dataSource"></jee:jndi-lookup>
 </beans>

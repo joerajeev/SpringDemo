@@ -7,6 +7,7 @@
 	
 	<security:authentication-manager>
 		
+		<!-- The referenced bean 'dataSource' was actually created using jee:jndi-lookup in the dao-context-->
 		<security:authentication-provider>
 			<security:jdbc-user-service data-source-ref="dataSource"
 				users-by-username-query="select * from (select email as username, password, enabled from users) users where username = ?" />

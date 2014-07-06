@@ -8,7 +8,6 @@ import java.util.logging.Logger;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -16,6 +15,12 @@ import org.springframework.stereotype.Component;
 
 import com.joerajeev.carsales.service.Vehicle;
 
+/**
+ * Data access class for the Cars object
+ * 
+ * @author Rajeev
+ *
+ */
 @Component("carsDao")
 public class CarsDao {
 

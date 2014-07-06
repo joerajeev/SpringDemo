@@ -14,11 +14,18 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.joerajeev.carsales.service.AdService;
-import com.joerajeev.carsales.service.Seller;
+import com.joerajeev.carsales.service.User;
 import com.joerajeev.carsales.service.ServiceException;
 import com.joerajeev.carsales.service.UserService;
 import com.joerajeev.carsales.service.Vehicle;
 
+/**
+ * AdController used by the dispatcher servlet for 
+ * serving car sales advert related requests
+ * 
+ * @author Rajeev
+ *
+ */
 @Controller
 public class AdController {
 
@@ -60,7 +67,7 @@ public class AdController {
 			try {
 				String username= principal.getName();
 				logger.info("user :"+username);
-				Seller user = userService.readByUsername(username);
+				User user = userService.readByUsername(username);
 				if(user != null) {
 					vehicle.setOwner(user.getId());
 					adService.createVehicle(vehicle);
