@@ -11,6 +11,12 @@ import org.springframework.jndi.JndiTemplate;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
 
+/**
+ * Annotation based spring context configuration
+ * 
+ * @author Rajeev
+ *
+ */
 @Configuration
 @ComponentScan(basePackages = {"com.joerajeev.carsales.dao", "com.joerajeev.carsales.service"})
 public class AppConfig {

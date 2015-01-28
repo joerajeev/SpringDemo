@@ -12,6 +12,13 @@ import org.springframework.web.context.support.XmlWebApplicationContext;
 import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.DispatcherServlet;
 
+/**
+ * Configures the servlet context programmatically
+ * (i.e replacing the web.xml)
+ * 
+ * @author Rajeev
+ *
+ */
 public class CarSalesWebApplicationInitalizer implements WebApplicationInitializer {
 
 	@Override
@@ -27,7 +34,6 @@ public class CarSalesWebApplicationInitalizer implements WebApplicationInitializ
 		container.addListener(new ContextLoaderListener(annoAppCtx));
 				
 		//Replaced the below xml based config by the Annotation based config (above)
-		//(Left this here just for reference)
 		/*XmlWebApplicationContext appCtx = new XmlWebApplicationContext();
 		appCtx.setConfigLocation("classpath:com/joerajeev/carsales/config/app-context.xml");
 		container.addListener(new ContextLoaderListener(appCtx));*/
