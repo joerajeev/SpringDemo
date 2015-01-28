@@ -25,8 +25,8 @@ public class CarSalesWebApplicationInitalizer implements WebApplicationInitializ
 	public void onStartup(ServletContext container) throws ServletException {
 		
 		/*
-		 * Loading application contexts from the AnnotationConfig classes
-		 * Alternatively, could have extended the AbstractAnnotationConfigDispatcherServletInitializer  and overridden 
+		 * Loading application contexts from the Annotation Config classes
+		 * Alternatively, we could have extended the AbstractAnnotationConfigDispatcherServletInitializer and overridden 
 		 * the getRootConfigClasses()
 		 */
 		AnnotationConfigWebApplicationContext annoAppCtx = new AnnotationConfigWebApplicationContext();
@@ -38,8 +38,13 @@ public class CarSalesWebApplicationInitalizer implements WebApplicationInitializ
 		appCtx.setConfigLocation("classpath:com/joerajeev/carsales/config/app-context.xml");
 		container.addListener(new ContextLoaderListener(appCtx));*/
 		
+		/*
+		 * Adding the springSecurityFilterChain filter to the servlet context
+		 * Alternatively could have extended the AbstractSecurityWebApplicationInitializer  
+		 */
 		FilterRegistration.Dynamic filterReg = container.addFilter("springSecurityFilterChain", new DelegatingFilterProxy());
 		filterReg.addMappingForUrlPatterns(null, true, "/*");
+		
 		
 		XmlWebApplicationContext dispatcherContext = new XmlWebApplicationContext();
 		dispatcherContext.setConfigLocation("/WEB-INF/carsales-servlet.xml");
