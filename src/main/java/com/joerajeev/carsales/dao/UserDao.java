@@ -40,6 +40,8 @@ public class UserDao {
 	}
 	
 	/**
+	 * Creates a user.
+	 * Demonstrates MapSqlParameterSource.
 	 * 
 	 * @param user
 	 * @return id of the user created

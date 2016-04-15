@@ -36,10 +36,7 @@ public class CarsDao {
 	public List<Vehicle> getAllVehicles(){
 		
 		String selectQuery = "select reg, year, owner, milage, colour, make, model from vehicle";
-		return jdbc.query(selectQuery, new RowMapper<Vehicle>() {
-
-			@Override
-			public Vehicle mapRow(ResultSet rs, int rowNum) throws SQLException {
+		return jdbc.query(selectQuery, (ResultSet rs, int rowNum) -> {
 				Vehicle vehicle = new Vehicle();
 				vehicle.setReg(rs.getString(1));
 				vehicle.setYear(rs.getInt(2));
@@ -49,11 +46,18 @@ public class CarsDao {
 				vehicle.setMake(rs.getString(6));
 				vehicle.setModel(rs.getString(7));
 				return vehicle;
-			}
 			
 		});
 	}
 	
+	/**
+	 * Creates a car.
+	 * Demonstrates BeanPropertyParameterSource.
+	 * 
+	 * @param car
+	 * @return
+	 * @throws Exception
+	 */
 	public boolean create(Vehicle car) throws Exception {
 		
 		String insertSql = "insert into vehicle (reg, year, owner, milage, colour, make, model) "

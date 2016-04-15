@@ -22,6 +22,15 @@ public class AuthorityDao {
 		jdbc = new JdbcTemplate(dataSource);
 	}
 	
+	/**
+	 * Creates an authority.
+	 * Demonstrates basic insert without parameter sources's.
+	 * 
+	 * @param email
+	 * @param authority
+	 * @return
+	 * @throws Exception
+	 */
 	public boolean create(String email, String authority) throws Exception{
 		return (jdbc.update("insert into authorities (username,authority) values (?,?)", new Object[]{email, authority}) == 1);
 	}
