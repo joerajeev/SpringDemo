@@ -3,7 +3,10 @@ SpringDemo
 
 A Car sales web app that would demonstate Spring MVC, Spring Security, Spring DAO (JDBC), Spring form validation etc. 
 
- 
+ Examples of alternate (older) configuration methods are available in branches
+ - pre-servlet-3.x : Initializing the web application with a web.xml
+ - pre-annotation-config : Spring configurations though xml.
+ - 
 Authors
 -------
 * "Joseph Rajeev Motha" <joerajeev@gmail.com>
