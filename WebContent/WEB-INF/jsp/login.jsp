@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/main.css">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 </head>
-<body onload='document.loginform.j_username.focus();'>
+<body onload='document.loginform.username.focus();'>
 	<div id="body_wrapper">
 		<%@ include file="header.jspf" %>
 		<section id="main_section">
@@ -19,14 +19,14 @@
 				</c:if>
 			</article>
 			<article>
-				<form name='loginform' action='${pageContext.request.contextPath}/j_spring_security_check' method='POST' autocomplete='off'>
+				<form name='loginform' action='${pageContext.request.contextPath}/login' method='POST' autocomplete='off'>
 					<div class="form-group">
 						<label for="username">Email</label>
-						<input id="username" class="form-control" type="text" name="j_username" value="" autocomplete="off">
+						<input id="username" class="form-control" type="text" name="username" value="" autocomplete="off">
 					</div>
 					<div class="form-group">
 						<label for="password">Password</label>
-						<input id="password" class="form-control" type="password" name="j_password" value="">
+						<input id="password" class="form-control" type="password" name="password" value="">
 					</div>
 					<div class="form-group">
 						<input class="btn" name="submit" type="submit" value="Sign in">

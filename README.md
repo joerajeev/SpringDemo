@@ -1,5 +1,3 @@
-SpringDemo
-==========
 
 A Car sales web app that would demonstate Spring MVC, Spring Security, Spring DAO (JDBC), Spring form validation etc. 
 
@@ -10,8 +8,8 @@ Authors
 
  Setup
  ------
-* The sql required to create the DB is in resources/create_db.sql. It was created with MySQL workbench and may need tweaking to work with other DB's. 
-* The app excepts a Datasource in your appication/web server with the name 'jdbc/carsalesdb'. 
+* Build the project with mvn clean install
+* The application expects a datasource named "jdbc/carsalesdb". Configure this in your application/web server.
 For example: 
 ```
        <Resource name="jdbc/carsalesdb" auth="Container" type="javax.sql.DataSource"
@@ -19,3 +17,5 @@ For example:
                username="javauser" password="javadude" driverClassName="com.mysql.jdbc.Driver"
                url="jdbc:mysql://localhost:3306/carsales"/>
 ```
+* Create the database using the scripts provided in resources/create_db.sql. It was created with MySQL workbench and may need tweaking to work with other DB's. 
+* Deploy the application to the application/web server.
